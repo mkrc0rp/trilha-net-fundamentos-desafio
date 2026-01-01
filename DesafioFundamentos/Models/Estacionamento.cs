@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 namespace DesafioFundamentos.Models
 {
     public class Estacionamento
@@ -42,8 +44,14 @@ namespace DesafioFundamentos.Models
                 int horas = 0;
                 decimal valorTotal = 0; 
 
+                horas = Convert.ToInt16(Console.ReadLine());
+
+                valorTotal = (precoInicial + precoPorHora)*horas; 
+
                 // TODO: Remover a placa digitada da lista de veículos
                 // *IMPLEMENTE AQUI*
+
+                veiculos.Remove(placa);
 
                 Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
             }
@@ -66,7 +74,7 @@ namespace DesafioFundamentos.Models
                 {
                     Console.WriteLine(placa);            
                 }
-                
+
             }
             else
             {
